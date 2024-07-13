@@ -35,13 +35,7 @@
 [![Redux](https://img.shields.io/badge/Redux-764ABC?style=for-the-badge&logo=redux&logoColor=white)](https://redux.js.org/)
 [![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org/)
 
-## GitHub Stats
 
-![Aashish Singune's GitHub Stats](https://github-readme-stats.vercel.app/api?username=aashishsingune&show_icons=true&theme=radical)
-
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=aashishsingune&layout=compact&theme=radical)
-
-![Profile Views](https://komarev.com/ghpvc/?username=aashishsingune&color=blue)
 
 ## Education
 
