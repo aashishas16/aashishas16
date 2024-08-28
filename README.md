@@ -1,4 +1,4 @@
-<img src="https://media.licdn.com/dms/image/C4E12AQHohaaJm6qNNw/article-cover_image-shrink_423_752/0/1630526455370?e=1722470400&v=beta&t=Fhg-3SyKTd2Sn6WExTF5UDLEwPhPaDf5gHEK7NGajUo" alt="Aashish Singune" style="width: 100%; border-radius: 50%; object-fit: cover;">
+
 
 <h1 align="center">Hi 👋, I'm Aashish Singune</h1>
 <h3 align="center">Aspiring software developer with a keen interest in web development, passionate about leveraging technology to create impactful solutions. Currently pursuing Master in Computer Application, I am skilled in various programming languages and tools, and always eager to learn and grow in the tech field.</h3>
