@@ -56,19 +56,7 @@
   Ravindra Nath Tagore College Sanawad, MP  
   CGPA: 7.00
 
-## Personal Projects
 
-- **NIT Agartala Photo Gallery**  
-  Created an interactive photo gallery showcasing various picturesque moments of NIT Agartala using HTML and CSS.  
-  - Implemented a responsive grid layout to neatly organize and display the photos.
-  - Incorporated hover effects for a visually engaging user experience, enhancing the presentation of the images.  
-  - **Technology Used**: HTML, CSS, JS.  
-
-- **Personal Portfolio**  
-  Built a personalized portfolio website utilizing HTML and CSS to showcase my web development and design skills.  
-  - Crafted an appealing and responsive layout that presents my professional background, featured projects, and contact information.
-  - Demonstrated proficiency in creating visually engaging websites while prioritizing user experience and design aesthetics.  
-  - **Technology Used**: HTML, CSS.
 
 ## Achievements
 
