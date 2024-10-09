@@ -2,12 +2,7 @@
     <img src="https://readme-typing-svg.herokuapp.com/?font=Righteous&size=35&center=true&vCenter=true&width=700&height=70&duration=4000&lines=Hi+There!+👋;+I'm+Aashish+Singunet!;+An+MCA+Student+and+Web+Developer!" />
 </h1>
 
-<h3 align="center">A passionate MCA student skilled in full-stack web development and always eager to learn and grow</h3>
-
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=aashishsingunet&label=Profile%20views&color=0e75b6&style=flat" alt="aashishsingunet" /> </p>
-
-<p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=aashishsingunet" alt="aashishsingunet" /></a> </p>
-
+<h3 align="center">Aspiring software developer with a keen interest in web development, passionate about leveraging technology to create impactful solutions. Currently pursuing Master in Computer Application, I am skilled in various programming languages and tools, and always eager to learn and grow in the tech field.</h3>
 <br>
 <br>
 
@@ -19,7 +14,7 @@
 
 - 💬 Ask me about **JavaScript, React, Node.js, and databases**
 
-- 📫 How to reach me **aashish.singunet@gmail.com**
+- 📫 How to reach me **aashishnimcet2022@gmail.com**
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
