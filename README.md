@@ -40,11 +40,83 @@
     <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://github.com/DevMadhup/DevMadhup/blob/main/git.gif" alt="git" width="80" height="55"/> </a> 
 </p>
 
-<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=aashishsingunet&show_icons=true&locale=en&layout=compact" alt="aashishsingunet" /></p>
+## Skills
 
-<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=aashishsingunet&show_icons=true&locale=en" alt="aashishsingunet" /></p>
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)](https://isocpp.org/)
+[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
+[![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
+[![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org/)
+[![ShadCN](https://img.shields.io/badge/ShadCN-000000?style=for-the-badge&logo=shadcn&logoColor=white)](https://shadcn.dev/)
+[![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)](https://git-scm.com/)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/)
+[![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)](https://getbootstrap.com/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)](https://www.postman.com/)
+[![Redux](https://img.shields.io/badge/Redux-764ABC?style=for-the-badge&logo=redux&logoColor=white)](https://redux.js.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org/)
+[![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Java](https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white)](https://www.java.com/)
+[![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)](https://aws.amazon.com/)
+[![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/)
+[![Render](https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=white)](https://render.com/)
 
-### 🔝 Top Contributed Repo
-![](https://github-contributor-stats.vercel.app/api?username=aashishsingunet&limit=5&theme=flat&combine_all_yearly_contributions=true)
 
-<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=aashishsingunet&" alt="aashishsingunet" /></p>
+
+
+## Education
+
+- **MASTER IN COMPUTER APPLICATION** (2022-25)  
+  National Institute of Technology Agartala, Tripura  
+  CGPA: 8.62
+
+- **BSC IN COMPUTER SCIENCE** (2019-22)  
+  Ravindra Nath Tagore College Sanawad, MP  
+  Percentage: 66.78%
+
+- **12TH STANDARD** (2018-19)  
+  SUN SHINE H S SCHOOL, INDORE MP  
+  Percentage: 73.00%
+
+- **10TH STANDARD** (2017-18)  
+  Ravindra Nath Tagore College Sanawad, MP  
+  CGPA: 7.00
+
+
+
+## Achievements
+
+- **NIMCET 2022** AIR: 702
+- University of Hyderabad (HCU) selected
+- KIIT 97 percentile
+
+## Technical Skills and Interests
+
+**Languages**: C/C++, Python, JavaScript, HTML+CSS  
+**Libraries**: C++ STL  
+**Web Dev Tools**: Sublime Text Editor, VSCode, Git, GitHub  
+**Cloud/Databases**: Relational Database (MySQL)  
+**Relevant Coursework**: Data Structures & Algorithms, Operating Systems, Object Oriented Programming, Database Management System, Software Engineering, Computer Architecture & Organization, Web Development.  
+**Areas of Interest**: Web Design and Development  
+**Soft Skills**: Problem Solving, Self-learning, Presentation, Adaptability  
+
+## Certificates
+
+- **LEARN CPP** by CodeChef
+- **LEARN SQL** by CodeChef
+- **LEARN DSA** by MySirG
+
+## Contact
+
+- **Phone**: +91-7610629329
+- **Email**: aashishnimcet2022@gmail.com
+- **GitHub**: [GitHub Profile](https://github.com/aashishsingune)
+- **LinkedIn**: [LinkedIn Profile](https://linkedin.com/in/aashish-singune)
+- **LeetCode**: [LeetCode Profile](https://leetcode.com/aashishsingune)
+- **CodeChef**: [CodeChef Profile](https://www.codechef.com/users/aashishsingune)
+
