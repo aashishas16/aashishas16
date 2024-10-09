@@ -1,6 +1,9 @@
 
 
-<h1 align="center">Hi 👋, I'm Aashish Singune</h1>
+<h1 align="center">
+  <marquee>Hi 👋, I'm Aashish Singune</marquee>
+</h1>
+
 <h3 align="center">Aspiring software developer with a keen interest in web development, passionate about leveraging technology to create impactful solutions. Currently pursuing Master in Computer Application, I am skilled in various programming languages and tools, and always eager to learn and grow in the tech field.</h3>
 
 <div style="margin-top: 3rem">
