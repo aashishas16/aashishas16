@@ -18,8 +18,11 @@
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
-<a href="https://twitter.com/your_twitter" target="blank"><img align="center" src="https://github.com/DevMadhup/DevMadhup/blob/main/twitter.gif" alt="twitter" height="65" width="75" /></a>
-<a href="https://linkedin.com/in/aashish-singunet" target="blank"><img align="center" src="https://github.com/DevMadhup/DevMadhup/blob/main/372102050_LINKEDIN_ICON_TRANSPARENT_1080.gif" alt="linkedin" height="55" width="50" /></a>
+<a href="https://x.com/SinguneAashish" target="_blank">
+    <img align="center" src="https://example.com/x_logo.png" alt="X" height="65" width="75" />
+</a>
+
+<a href="https://www.linkedin.com/in/aashish-singune-76b33724a/" target="blank"><img align="center" src="https://github.com/DevMadhup/DevMadhup/blob/main/372102050_LINKEDIN_ICON_TRANSPARENT_1080.gif" alt="linkedin" height="55" width="50" /></a>
 <a href="https://instagram.com/your_instagram" target="blank"><img align="center" src="https://github.com/DevMadhup/DevMadhup/blob/main/insta.gif" alt="instagram" height="75" width="80" /></a>
 </p>
 
