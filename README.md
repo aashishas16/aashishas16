@@ -2,7 +2,7 @@
     <img src="https://readme-typing-svg.herokuapp.com/?font=Righteous&size=35&center=true&vCenter=true&width=700&height=70&duration=4000&lines=Hi+There!+👋;+I'm+Aashish+Singune!;+A+Software+Engineer!" />
 </h1>
 
-<h3 align="center">A passionate Software Engineer willing to implement my skills in an organization</h3>
+<h3 align="center">A passionate Software Engineer and Full Stack Developer with expertise in JavaScript, React, Node.js . Eager to apply technical skills to build impactful and scalable solutions. Committed to continuous learning and contributing to innovative projects in a dynamic organization.</h3>
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=aashishas16&label=Profile%20views&color=0e75b6&style=flat" alt="aashishas16" /> </p>
 
@@ -15,9 +15,9 @@
 
 - 🔭 I’m currently working on **software development and automation**
 
-- 💬 Ask me about **software development, AWS, Azure, and cloud technologies**
+- 💬 Ask me about **software development,JavaScript, React, Node.js, and databases**  
 
-- 📫 How to reach me **aashishsingune@gmail.com**
+- 📫 How to reach me **aashishnimcet2022@gmail.com**
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
