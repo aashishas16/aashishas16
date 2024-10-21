@@ -2,7 +2,7 @@
     <img src="https://readme-typing-svg.herokuapp.com/?font=Righteous&size=35&center=true&vCenter=true&width=700&height=70&duration=4000&lines=Hi+There!+👋;+I'm+Aashish+Singune!;+A+Software+Engineer!" />
 </h1>
 
-<h3 align="center">A passionate Software Engineer and Full Stack Developer with expertise in JavaScript, React, Node.js . Eager to apply technical skills to build impactful and scalable solutions. Committed to continuous learning and contributing to innovative projects in a dynamic organization.</h3>
+<h3 align="center">Aspiring software developer with a keen interest in web development, passionate about leveraging technology to create impactful solutions. Currently pursuing Master in Computer Application, I am skilled in various programming languages and tools, and always eager to learn and grow in the tech field.</h3>
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=aashishas16&label=Profile%20views&color=0e75b6&style=flat" alt="aashishas16" /> </p>
 
@@ -13,11 +13,18 @@
 
 <img align="right" alt="Coding" width="400" src="https://raw.githubusercontent.com/devSouvik/devSouvik/master/gif3.gif">
 
-- 🔭 I’m currently working on **software development and automation**
 
-- 💬 Ask me about **software development,JavaScript, React, Node.js, and databases**  
 
-- 📫 How to reach me **aashishnimcet2022@gmail.com**
+<div style="margin-top: 3rem">
+  <div style="flex: 1; ">
+    <p>🚀 I am currently pursuing my Master's in Computer Application from NIT Agartala with a CGPA of 8.7</p>
+    <p>🎓 I hold a BSc in Computer Science from Ravindra Nath Tagore College Sanawad with a percentage of 66.78%.</p>
+    <p>🌐 I have created various projects including a personal portfolio and a photo gallery for NIT Agartala.</p> 
+   <p>💬 Ask me about software development, JavaScript, React, Node.js, and databases </p>
+      <p>📫 How to reach me aashishnimcet2022@gmail.com</p>
+  </div>
+</div>
+
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
