@@ -97,4 +97,4 @@ Here are my Holopin badges:
 
 
 ## 🎖️ Specific Badge
-[![Holopin Badge](https://holopin.io/userbadge/cm21efpiq74930cmlztbfd0pl)](https://holopin.io/userbadge/cm21efpiq74930cmlztbfd0pl)
+[![Holopin Badge](https://holopin.io/userbadge/cm21efpiq74930cmlztbfd0pl)](https://holopin.io/userbadge/cm21efpiq74930cmlztbfd0pl) ![Holopin Logo](https://www.holopin.io/favicon.ico)
