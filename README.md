@@ -87,9 +87,14 @@ I love contributing to open source projects! Here are some of my contributions:
 
 [![Aashish's GitHub Stats](https://github-readme-stats.vercel.app/api?username=aashishas16&show_icons=true&theme=radical)](https://github.com/aashishas16)
 
-## 📈 GitHub Repository Contribution Stats
-You can check out my contribution stats for specific repositories below:
 
-- [Contribution Stats for GitHub Repository](https://github.com/aashishas16/github-repository-contribution-stats)
 
-Feel free to connect with me or check out my projects!
+## 🎖️Holopin Badges
+
+Here are my Holopin badges:
+
+[![My Holopin Badges](https://holopin.me/@aashishas16)](https://holopin.io/@aashishas16#badges)
+
+
+## 🎖️ Specific Badge
+[![Holopin Badge](https://holopin.io/userbadge/cm21efpiq74930cmlztbfd0pl)](https://holopin.io/userbadge/cm21efpiq74930cmlztbfd0pl)
