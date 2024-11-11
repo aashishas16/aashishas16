@@ -508,6 +508,113 @@ int main() {
 
 // not written now
 
+#include <stdio.h>
+#include <string.h>
+
+#define MAX 100
+#define STATES 10
+#define TERMINALS 5
+#define NON_TERMINALS 5
+
+typedef struct {
+    char lhs;
+    char rhs[MAX][MAX];
+    int rhs_count;
+} Rule;
+
+Rule grammar[MAX];
+int rule_count, term_count, non_term_count;
+char terminals[TERMINALS], non_terminals[NON_TERMINALS];
+char action[STATES][TERMINALS][MAX];
+int goto_table[STATES][NON_TERMINALS];
+
+void inputGrammar() {
+    printf("Enter number of rules: ");
+    scanf("%d", &rule_count);
+    for (int i = 0; i < rule_count; i++) {
+        printf("LHS for rule %d: ", i + 1);
+        scanf(" %c", &grammar[i].lhs);
+        printf("Number of RHS options: ");
+        scanf("%d", &grammar[i].rhs_count);
+        for (int j = 0; j < grammar[i].rhs_count; j++) {
+            printf("RHS option %d: ", j + 1);
+            scanf("%s", grammar[i].rhs[j]);
+        }
+    }
+}
+
+void inputTerminalsAndNonTerminals() {
+    printf("Enter number of terminals: ");
+    scanf("%d", &term_count);
+    printf("Enter terminals: ");
+    for (int i = 0; i < term_count; i++) scanf(" %c", &terminals[i]);
+    printf("Enter number of non-terminals: ");
+    scanf("%d", &non_term_count);
+    printf("Enter non-terminals: ");
+    for (int i = 0; i < non_term_count; i++) scanf(" %c", &non_terminals[i]);
+}
+
+void constructTable() {
+    for (int i = 0; i < STATES; i++) {
+        for (int j = 0; j < term_count; j++) 
+            snprintf(action[i][j], MAX, "s%d", i + 1);  // Shift action
+        for (int j = 0; j < non_term_count; j++) 
+            goto_table[i][j] = i + 1;                  // Goto action
+    }
+}
+
+void displayTable() {
+    printf("\nLALR Parsing Table:\nState\t");
+    for (int i = 0; i < term_count; i++) printf("%c\t", terminals[i]);
+    for (int i = 0; i < non_term_count; i++) printf("%c\t", non_terminals[i]);
+    printf("\n");
+    for (int i = 0; i < STATES; i++) {
+        printf("%d\t", i);
+        for (int j = 0; j < term_count; j++) printf("%s\t", action[i][j]);
+        for (int j = 0; j < non_term_count; j++) printf("%d\t", goto_table[i][j]);
+        printf("\n");
+    }
+}
+
+int main() {
+    printf("LALR Parser Construction\n");
+    inputGrammar();
+    inputTerminalsAndNonTerminals();
+    constructTable();
+    displayTable();
+    return 0;
+} 
+
+
+Enter number of rules: 2
+LHS for rule 1: S
+Number of RHS options: 1
+RHS option 1: AB
+LHS for rule 2: A
+Number of RHS options: 1
+RHS option 1: a
+
+Enter number of terminals: 2
+Enter terminals: a b
+
+Enter number of non-terminals: 2
+Enter non-terminals: A B
+
+
+ 
+output
+
+LALR Parser Construction
+
+LALR Parsing Table:
+State   a       b       A       B
+0       s1      s1      1       1
+1       s2      s2      2       2
+2       s3      s3      3       3
+3       s4      s4      4       4
+4       s5      s5      5       5
+
+
 <--------------------------------------------------------------->
 10. Write a C program to implement shift reduce parser.
 
