@@ -1,0 +1,775 @@
+<--------------------------------------------------------------->
+to run lex file
+
+flex filename.l
+gcc lex.yy.c -o filename -lfl
+./filename
+
+to run c file
+
+gcc filename.c -o filename
+./filename
+
+
+
+1a. Write a C Program to Scan and Count the number of characters, words, and lines in a file.
+#include<stdlib.h>
+#include<stdio.h>
+
+int main() {
+  FILE *file;
+  char ch;
+  int c, w, l;
+  file = fopen("test.txt", "w");
+  while((ch = getchar()) != EOF) {
+    putc(ch, file);
+  }
+  fclose(file);
+ 
+  c = w = l = 1;
+  fopen("test.txt", "r");
+  while((ch = fgetc(file)) != EOF) {
+    c++;
+    if (ch == '\n' || ch == '\0') l++;
+    if (ch == '\n' || ch == '\t' || ch == ' ' || ch == '\0') w++;
+  }
+  fclose(file);
+
+  printf("char=%d\nwords=%d\nlines=%d", c, w, l);
+  return 0;
+}
+
+
+<--------------------------------------------------------------->
+1b. Write a C program to read names and marks of n number of students from users and store them in a file.
+#include<stdlib.h>
+#include<stdio.h>
+
+int main() {
+  FILE *file;
+  char ch;
+  char name[50];
+  int marks;
+  
+  file = fopen("student.txt", "w");
+  for(int i=0; i<5; i++) {
+    printf("enter name: ");
+    scanf("%s", name);
+    printf("enter marks");
+    scanf("%d", &marks);
+    fprintf(file, "Name: %s, Marks %d\n", name, marks);
+  }
+  fclose(file);
+}
+
+
+<--------------------------------------------------------------->
+1c. Write a C Program Delete a specific Line from a Text File.
+#include<stdlib.h>
+#include<stdio.h>
+
+int main() {
+  FILE *file;
+  FILE *temp;
+  file = fopen("input.txt", "r");
+  temp = fopen("output.txt", "w");
+
+  int n;
+  scanf("%d", &n);
+
+  char line[1000];
+  int currentline=1;
+
+  while((fgets(line, sizeof(line), file))) {
+    if(currentline != n) {
+      fputs(line, temp);
+    }
+    currentline++;
+  }
+
+  fclose(file);
+  fclose(temp);
+  remove("input.txt");
+  rename("output.txt", "input.txt");
+  return 0;  
+}
+
+
+<--------------------------------------------------------------->
+1d. Write a C Program copy content from one file to another.
+#include<stdlib.h>
+#include<stdio.h>
+
+int main() {
+  FILE *file;
+  FILE *temp;
+  file = fopen("input.txt", "r");
+  temp = fopen("output.txt", "w");
+
+  char line[1000];
+  while(fgets(line, sizeof(line), file)) {
+    fputs(line, temp);
+  }
+
+  fclose(file);
+  fclose(temp);
+  return 0;
+}
+
+
+<--------------------------------------------------------------->
+1e. Write a C program to detect tokens in a C program.
+// so long program
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+
+int main()
+{
+    FILE *fptr;
+    char filename[100], c;
+    int i, j, count = 0;
+    char keywords[32][10] = {"auto", "break", "case", "char", "const", "continue", "default",
+                              "do", "double", "else", "enum", "extern", "float", "for", "goto",
+                              "if", "int", "long", "register", "return", "short", "signed",
+                              "sizeof", "static", "struct", "switch", "typedef", "union",
+                              "unsigned", "void", "volatile", "while"};
+
+    // Open file
+    printf("Enter the filename to open \n");
+    scanf("%s", filename);
+    fptr = fopen(filename, "r");
+    if (fptr == NULL)
+    {
+        printf("Cannot open file \n");
+        exit(0);
+    }
+
+    // Read contents from file
+    c = fgetc(fptr);
+    while (c != EOF)
+    {
+        // While a comment is found
+        if (c == '/')
+        {
+            c = fgetc(fptr);
+            if (c == '/')
+            {
+                while (c != '\n')
+                    c = fgetc(fptr);
+            }
+            else if (c == '*')
+            {
+                do
+                {
+                    while (c != '*')
+                        c = fgetc(fptr);
+                    c = fgetc(fptr);
+                } while (c != '/');
+            }
+        }
+
+        // While a string literal is found
+        if (c == '"')
+        {
+            do
+            {
+                c = fgetc(fptr);
+            } while (c != '"');
+        }
+
+        // While a character literal is found
+        if (c == '\'')
+        {
+            do
+            {
+                c = fgetc(fptr);
+            } while (c != '\'');
+        }
+
+        // While a preprocessor directive is found
+        if (c == '#')
+        {
+            while (c != '\n')
+                c = fgetc(fptr);
+        }
+
+        // While a keyword or an identifier is found
+        if (isalpha(c) || c == '_')
+        {
+            char word[100];
+            i = 0;
+            do
+            {
+                word[i++] = c;
+                c = fgetc(fptr);
+            } while (isalnum(c) || c == '_');
+            word[i] = '\0';
+            int flag = 0;
+            for (j = 0; j < 32; j++)
+            {
+                if (strcmp(word, keywords[j]) == 0)
+                {
+                    flag = 1;
+                    break;
+                }
+            }
+            if (flag == 1)
+                printf("%s is a keyword\n", word);
+            else
+                printf("%s is an identifier\n", word);
+        }
+
+        // While a number is found
+        if (isdigit(c))
+        {
+            do
+            {
+                c = fgetc(fptr);
+            } while (isdigit(c));
+            printf("%c is a number\n", c);
+        }
+
+        // While a special character is found
+        if (!isalnum(c))
+        {
+            printf("%c is a special character\n", c);
+            c = fgetc(fptr);
+        }
+    }
+
+    fclose(fptr);
+    return 0;
+}
+
+
+<--------------------------------------------------------------->
+1f. Write a C program to delete/ drop specific words from one file (say source.txt). Which words will be deleted it will be mentioned in a separate file (say drop.txt). Generate report file (say report.txt) to display word wise how many match found.
+
+#include<stdlib.h>
+#include<stdio.h>
+#include<string.h>
+
+int is_stopword(const char *word, char stopwords[][100], int stopword_count) {
+  for (int i = 0; i < stopword_count; i++) {
+    if (strcmp(word, stopwords[i]) == 0) {
+      return 1; 
+    }
+  }
+  return 0; 
+}
+
+int main() {
+  FILE *stopfile;
+  FILE *input;
+  FILE *output;
+
+  stopfile = fopen("stop_words.txt", "r");
+  input = fopen("story.txt", "r");
+  output = fopen("story_without_stopwords.txt", "w");
+
+  char stopwords[1000][100];
+  int i=0;
+
+  while(fscanf(stopfile, "%s", stopwords[i]) != EOF) {
+    i++;
+  }
+  int stopwordcount = i;
+
+  char word[100];
+    while (fscanf(input, "%s", word) != EOF) {
+      if (!is_stopword(word, stopwords, stopwordcount)) {
+        fprintf(output, "%s ", word);
+      }
+    }
+
+  fclose(stopfile);
+  fclose(input);
+  fclose(output);
+
+  return 0;
+}
+
+
+second solution of remove element
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+  FILE *stopfile;
+  FILE *input;
+  FILE *output;
+
+  // Open files and check if they were successfully opened
+  stopfile = fopen("stop_word.txt", "r");
+  if (stopfile == NULL) {
+    perror("Error opening stop_word.txt");
+    return 1;
+  }
+
+  input = fopen("story.txt", "r");
+  if (input == NULL) {
+    perror("Error opening story.txt");
+    fclose(stopfile);
+    return 1;
+  }
+
+  output = fopen("story_without_stopwords.txt", "w");
+  if (output == NULL) {
+    perror("Error opening story_without_stopwords.txt");
+    fclose(stopfile);
+    fclose(input);
+    return 1;
+  }
+
+  // Read stop words into an array
+  char stopwords[1000][100];
+  int i = 0;
+  while (fscanf(stopfile, "%s", stopwords[i]) != EOF) {
+    i++;
+  }
+  int stopwordcount = i;
+
+  // Process the input file line by line
+  char line[1000];
+  while (fgets(line, sizeof(line), input)) {
+    char *token = strtok(line, " \n");
+    int first_word = 1; // To handle spacing properly
+
+    while (token != NULL) {
+      int isstopword = 0;
+
+      // Check if the token is a stopword
+      for (int j = 0; j < stopwordcount; j++) {
+        if (strcmp(token, stopwords[j]) == 0) {
+          isstopword = 1;
+          break;
+        }
+      }
+
+      // If not a stopword, write it to the output file
+      if (!isstopword) {
+        if (!first_word) {
+          fprintf(output, " ");
+        }
+        fprintf(output, "%s", token);
+        first_word = 0;
+      }
+
+      token = strtok(NULL, " \n");
+    }
+
+    fprintf(output, "\n");
+  }
+
+  // Close all files
+  fclose(stopfile);
+  fclose(input);
+  fclose(output);
+
+  return 0;
+}
+
+<--------------------------------------------------------------->
+2. Design a lexical analyzer for given language and the lexical analyzer should ignore redundant spaces, tabs and new lines. It should also ignore comments. Although the syntax specification states that identifiers can be arbitrarily long, you may restrict the length to some reasonable value. Simulate the same in C language. After lexical analysis separate file for each type of tokens will be created.
+
+// not written now
+
+<--------------------------------------------------------------->
+3.Write a program to take C program as input and identify all types comment line inside the program. After identifying all types of comment line it’s needs to be written back to a separate file.
+
+#include<stdlib.h>
+#include<stdio.h>
+#include<string.h>
+int main() {
+  FILE *input;
+  FILE *output;
+
+  input = fopen("input.c", "r");
+  output = fopen("output.txt", "w");
+
+  char line[1024];
+  int multiline = 0;
+
+  while(fgets(line, sizeof(line), input)) {
+    char *singlecomment = strstr(line, "//");
+    char *multiStart = strstr(line, "/*");
+    char *multiEnd = strstr(line, "*/");
+
+    if(multiline) {
+      fprintf(output, "%s", line);
+      if(multiEnd) {
+        multiline = 0;
+      }
+    }
+    else if(singlecomment) {
+      fprintf(output, "%s", singlecomment);
+    }
+    else if(multiStart) {
+      multiline = 1;
+      fprintf(output, "%s", multiStart);
+    }
+  }
+
+  fclose(input);
+  fclose(output);
+
+  return 0;
+}
+
+<--------------------------------------------------------------->
+4a. Write a Lex Program to find whether a given letter is a vowel or not.
+
+%{
+  #include<stdio.h>
+%}
+
+%%
+[aeiouAEIOU]  printf("%s is a vowel.\n", yytext); 
+[a-zA-Z]      printf("%s is consonant.\n", yytext);
+.             printf("%s is invalid", yytext);
+%%
+
+int main() {
+  yylex();
+  return 0;
+}
+
+
+<--------------------------------------------------------------->
+4b. Write a Lex Program to find Capital letters.
+
+%{
+#include <stdio.h>
+%}
+
+%%
+[A-Z]   { printf("%s is a capital letter.\n", yytext); }
+.       { ; }  /* Ignore other characters */
+%%
+
+int main() {
+    yylex();
+    return 0;
+}
+
+
+<--------------------------------------------------------------->
+4c. Write a Lex program to count the number of lines,  tabs, and spaces used in the input.
+
+%{
+#include <stdio.h>
+int line = 0, tab = 0, space = 0;
+%}
+
+%%
+\n      { line++; }
+\t      { tab++; }
+" "     { space++; }
+.       { ; }  
+%%
+
+int main() {
+  printf("Enter input (Ctrl+D to end input):\n");
+  yylex();
+  printf("Lines: %d, Tabs: %d, Spaces: %d\n", line, tab, space);
+  return 0;
+}
+
+<--------------------------------------------------------------->
+4d.Write a Lex program to take input from a file and remove multiple spaces, newline and tab and write output in a separate file.
+
+%{
+#include <stdio.h>
+#include <stdlib.h>
+FILE *yyin, *yyout;
+%}
+
+%%
+[ \t\n]+                              ; //this is intentionally kept
+.	        fputc(yytext[0], yyout);
+%%
+
+int main() {
+  yyin = fopen("4d.txt", "r");
+  yyout = fopen("output.txt", "w");
+  yylex();
+  return 0;
+}
+
+
+<--------------------------------------------------------------->
+5. Write a C program to simulate lexical analyzer for validating operators.
+#include<stdio.h>
+#include<string.h>
+#include<ctype.h>
+
+const char* operators[] = {"+", "-", "*", "/", "%", "=", "==", "!=", ">", "<", ">=", "<=", "&&", "||", "&", "|", "^", "~", "<<", ">>"};
+int n = sizeof(operators)/sizeof(operators[0]);
+
+int is_op(char *input) {
+  for(int i=0; i<n; i++) {
+    if(strcmp(input, operators[i]) == 0) {
+      return 1;
+    }
+  }
+  return 0;
+}
+
+int main() {
+  char input[2];
+
+  printf("enter operator: ");
+  scanf("%s", input);
+
+  is_op(input) ? printf("valid") : printf("invalid");
+  return 0;
+}
+
+
+<--------------------------------------------------------------->
+6. Write a C program to recognize strings under 'a*', 'a*b+', 'abb'
+#include<stdio.h>
+#include<string.h>
+
+//given strings are -> a*, abb, a*b+
+
+int string_a(char *a) {
+  for(int i=0; a[i] != '\0'; i++) {
+    if(a[i] != 'a') return 0;
+  }
+  return 1;
+}
+
+int string_b(char *b) {
+  return strcmp(b, "abb") == 0 ? 1: 0;
+}
+
+int string_c(char *c) {
+  int i=0;
+  while(c[i] == 'a') {
+    i++;
+  }
+  if(c[i] == '\0' || c[i] != 'b') {
+    return 0;
+  }
+  while(c[i] == 'b') {
+    i++;
+  }
+  return c[i] == '\0';
+}
+
+int main() {
+  char str[100];
+
+  printf("enter input: ");
+  scanf("%s", str);
+
+  if(string_a(str)) {
+    printf("option a");
+  }
+  else if(string_b(str)) {
+    printf("option b");
+  }
+  else if(string_c(str)) {
+    printf("option c");
+  }
+  else {
+    printf("invalid");
+  }
+  return 0;
+}
+
+<--------------------------------------------------------------->
+9. Write a C program for constructing of LALR Bottom-up parsing.
+
+// not written now
+
+#include <stdio.h>
+#include <string.h>
+
+#define MAX 100
+#define STATES 10
+#define TERMINALS 5
+#define NON_TERMINALS 5
+
+typedef struct {
+    char lhs;
+    char rhs[MAX][MAX];
+    int rhs_count;
+} Rule;
+
+Rule grammar[MAX];
+int rule_count, term_count, non_term_count;
+char terminals[TERMINALS], non_terminals[NON_TERMINALS];
+char action[STATES][TERMINALS][MAX];
+int goto_table[STATES][NON_TERMINALS];
+
+void inputGrammar() {
+    printf("Enter number of rules: ");
+    scanf("%d", &rule_count);
+    for (int i = 0; i < rule_count; i++) {
+        printf("LHS for rule %d: ", i + 1);
+        scanf(" %c", &grammar[i].lhs);
+        printf("Number of RHS options: ");
+        scanf("%d", &grammar[i].rhs_count);
+        for (int j = 0; j < grammar[i].rhs_count; j++) {
+            printf("RHS option %d: ", j + 1);
+            scanf("%s", grammar[i].rhs[j]);
+        }
+    }
+}
+
+void inputTerminalsAndNonTerminals() {
+    printf("Enter number of terminals: ");
+    scanf("%d", &term_count);
+    printf("Enter terminals: ");
+    for (int i = 0; i < term_count; i++) scanf(" %c", &terminals[i]);
+    printf("Enter number of non-terminals: ");
+    scanf("%d", &non_term_count);
+    printf("Enter non-terminals: ");
+    for (int i = 0; i < non_term_count; i++) scanf(" %c", &non_terminals[i]);
+}
+
+void constructTable() {
+    for (int i = 0; i < STATES; i++) {
+        for (int j = 0; j < term_count; j++) 
+            snprintf(action[i][j], MAX, "s%d", i + 1);  // Shift action
+        for (int j = 0; j < non_term_count; j++) 
+            goto_table[i][j] = i + 1;                  // Goto action
+    }
+}
+
+void displayTable() {
+    printf("\nLALR Parsing Table:\nState\t");
+    for (int i = 0; i < term_count; i++) printf("%c\t", terminals[i]);
+    for (int i = 0; i < non_term_count; i++) printf("%c\t", non_terminals[i]);
+    printf("\n");
+    for (int i = 0; i < STATES; i++) {
+        printf("%d\t", i);
+        for (int j = 0; j < term_count; j++) printf("%s\t", action[i][j]);
+        for (int j = 0; j < non_term_count; j++) printf("%d\t", goto_table[i][j]);
+        printf("\n");
+    }
+}
+
+int main() {
+    printf("LALR Parser Construction\n");
+    inputGrammar();
+    inputTerminalsAndNonTerminals();
+    constructTable();
+    displayTable();
+    return 0;
+} 
+
+
+Enter number of rules: 2
+LHS for rule 1: S
+Number of RHS options: 1
+RHS option 1: AB
+LHS for rule 2: A
+Number of RHS options: 1
+RHS option 1: a
+
+Enter number of terminals: 2
+Enter terminals: a b
+
+Enter number of non-terminals: 2
+Enter non-terminals: A B
+
+
+ 
+output
+
+LALR Parser Construction
+
+LALR Parsing Table:
+State   a       b       A       B
+0       s1      s1      1       1
+1       s2      s2      2       2
+2       s3      s3      3       3
+3       s4      s4      4       4
+4       s5      s5      5       5
+
+
+<--------------------------------------------------------------->
+10. Write a C program to implement shift reduce parser.
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+
+// E -> E + E
+// E -> E * E
+// E -> id
+
+char stack[30][10];
+int top = -1;
+
+void push(const char* c) {
+  if(top < 30) {
+    strcpy(stack[++top], c);
+  }
+}
+
+void pop() {
+  if(top > -1) {
+    top--;
+  }
+}
+
+void display() {
+  for(int i=0; i<top; i++) {
+    printf("%s \n", stack[i]);
+  }
+}
+
+int reduce() {
+  if(top >= 2 && strcmp(stack[top-2], "E") == 0 && strcmp(stack[top-1], "+") == 0 && strcmp(stack[top], "E") == 0) {
+    pop();
+    pop();
+    strcpy(stack[top], "E");
+    return 1;
+  }
+  if(top >= 2 && strcmp(stack[top-2], "E") == 0 && strcmp(stack[top-1], "*") == 0 && strcmp(stack[top], "E") == 0) {
+    pop();
+    pop();
+    strcpy(stack[top], "E");
+    return 1;
+  }
+  if(top >= 0 && strcmp(stack[top], "id") == 0) {
+    strcpy(stack[top], "E");
+    return 1;
+  }
+  return 0;
+}
+
+void shift(char* c[], int n) {
+  int i = 0;
+  while(i < n) {
+    printf("shift %s \n", c[i]);
+    push(c[i]);
+    display();
+    while(reduce()) {
+      display();
+    }
+    i++;
+  }
+  if(top == 0 && strcmp(stack[top],"E") == 0) {
+    printf("string accepted");
+  } else {
+    printf("not accpeted");
+  }
+}
+
+int main() {
+  char* str[] = {"id", "+", "id", "*", "id"}; 
+  shift(str, 5);
+  return 0;
+}
+
+<--------------------------------------------------------------->
