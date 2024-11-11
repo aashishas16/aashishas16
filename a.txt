@@ -293,6 +293,88 @@ int main() {
   return 0;
 }
 
+
+second solution of remove element
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+  FILE *stopfile;
+  FILE *input;
+  FILE *output;
+
+  // Open files and check if they were successfully opened
+  stopfile = fopen("stop_word.txt", "r");
+  if (stopfile == NULL) {
+    perror("Error opening stop_word.txt");
+    return 1;
+  }
+
+  input = fopen("story.txt", "r");
+  if (input == NULL) {
+    perror("Error opening story.txt");
+    fclose(stopfile);
+    return 1;
+  }
+
+  output = fopen("story_without_stopwords.txt", "w");
+  if (output == NULL) {
+    perror("Error opening story_without_stopwords.txt");
+    fclose(stopfile);
+    fclose(input);
+    return 1;
+  }
+
+  // Read stop words into an array
+  char stopwords[1000][100];
+  int i = 0;
+  while (fscanf(stopfile, "%s", stopwords[i]) != EOF) {
+    i++;
+  }
+  int stopwordcount = i;
+
+  // Process the input file line by line
+  char line[1000];
+  while (fgets(line, sizeof(line), input)) {
+    char *token = strtok(line, " \n");
+    int first_word = 1; // To handle spacing properly
+
+    while (token != NULL) {
+      int isstopword = 0;
+
+      // Check if the token is a stopword
+      for (int j = 0; j < stopwordcount; j++) {
+        if (strcmp(token, stopwords[j]) == 0) {
+          isstopword = 1;
+          break;
+        }
+      }
+
+      // If not a stopword, write it to the output file
+      if (!isstopword) {
+        if (!first_word) {
+          fprintf(output, " ");
+        }
+        fprintf(output, "%s", token);
+        first_word = 0;
+      }
+
+      token = strtok(NULL, " \n");
+    }
+
+    fprintf(output, "\n");
+  }
+
+  // Close all files
+  fclose(stopfile);
+  fclose(input);
+  fclose(output);
+
+  return 0;
+}
+
 <--------------------------------------------------------------->
 2. Design a lexical analyzer for given language and the lexical analyzer should ignore redundant spaces, tabs and new lines. It should also ignore comments. Although the syntax specification states that identifiers can be arbitrarily long, you may restrict the length to some reasonable value. Simulate the same in C language. After lexical analysis separate file for each type of tokens will be created.
 
