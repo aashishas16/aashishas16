@@ -1,0 +1,151 @@
+<-------------------------------->
+father(dashrath, ram).
+father(dashrath, bharat).
+father(dashrath, lakshman).
+father(dashrath, shatrughna).
+father(ram, luv).
+father(ram, kush).
+father(bharat, taksha).
+father(bharat, angada).
+father(lakshman, chandraketu).
+father(lakshman, subahu).
+father(shatrughna, shatrughati).
+father(shatrughna, subahu).
+married(ram, sita).
+married(bharat, mandavi).
+married(lakshman, urmila).
+married(shatrughna, shrutkirti).
+married(dashrath, kausalya).
+married(dashrath, kaikeyi).
+married(dashrath, sumitra).
+married(janak, sunaina).
+mother(kausalya, ram).
+mother(kaikeyi, bharat).
+mother(sumitra, lakshman).
+mother(sumitra, shatrughna).
+mother(sunaina, sita).
+mother(sunaina, urmila).
+mother(sita, luv).
+mother(sita, kush).
+mother(urmila, angada).
+mother(urmila, chandraketu).
+mother(mandavi, taksha).
+mother(mandavi, pushkala).
+mother(shrutkirti, subahu).
+mother(shrutkirti, shatrughati).
+
+%Rules
+is_mother(Mother, Child) :- mother(Mother, Child).
+is_father(Father, Child) :- father(Father, Child).
+is_sibling(Sibling1, Sibling2) :-
+    (father(Father, Sibling1), father(Father, Sibling2);
+    mother(Mother, Sibling1), mother(Mother, Sibling2)),
+    Sibling1 \= Sibling2.
+is_spouse(Spouse, Partner) :- 
+    married(Spouse, Partner) ; married(Partner, Spouse).
+
+
+?- is_mother(Mother, ram).
+Mother = kausalya.
+
+?- is_father(Father, kush).
+Father = ram.
+
+?- is_sibling(ram, bharat).
+true.
+
+?- is_spouse(Spouse, sita).
+Spouse = ram.
+
+?- is_sibling(lakshman, Sibling).
+Sibling = ram ;
+Sibling = bharat ;
+Sibling = shatrughna.
+
+?- is_mother(kausalya, bharat).
+false.
+
+?- father(dashrath, Child).
+Child = ram ;
+Child = bharat ;
+Child = lakshman ;
+Child = shatrughna.
+
+
+
+
+
+
+<-------------------------------->
+series(X, Y, Z) :- Z is (X + Y).
+parallel(X, Y, Z) :- Z is ((X * Y) / (X + Y)).
+
+?- series(4, 6, Z).
+Z = 10.
+
+?- parallel(4, 6, Z).
+Z = 2.4.
+
+<-------------------------------->
+vertical(seg(point(X, _), point(X, _))).
+horizontal(seg(point(_, Y), point(_, Y))).
+oblique(seq(point(X1, Y1), point(X2, Y2)))
+	:- X1 \== X2,
+	Y1 \== Y2.
+
+
+?- vertical(seg(point(3, 1), point(3, 5))).
+true.
+
+?- horizontal(seg(point(2, 4), point(6, 4))).
+true.
+?- oblique(seg(point(1, 2), point(3, 4))).
+true.
+
+?- vertical(seg(point(3, 1), point(3, 5))).
+true.
+
+?- horizontal(seg(point(3, 1), point(3, 5))).
+false.
+
+?- oblique(seg(point(3, 1), point(3, 5))).
+false.
+
+<-------------------------------->
+move(state(middle, onbox, middle, hasnot),
+	grasp,
+	state(middle, onbox, middle, has)).
+move(state(P, onfloor, P, H), 
+	climb,
+	state(P, onbox, P, H)).
+move(state(P1, onfloor, P1, H),
+	push(P1, P2),
+	state(P2, onfloor, P2, H)).
+move(state(P1, onfloor, B, H),
+	walk(P1, P2),
+	state(P2, onfloor, B, H)).
+
+canget(state(_,_,_,has)).
+canget(State1) :-
+	move(State1, _, State2),
+	canget(State2).
+
+<-------------------------------->
+
+% Define the possible moves
+move(state(middle, on_box, middle, does_not_have_banana), grasp, state(middle, on_box, middle, has_banana)).
+move(state(Position, on_floor, Position, BananaStatus), climb, state(Position, on_box, Position, BananaStatus)).
+move(state(Position1, on_floor, Position1, BananaStatus), push(Position1, Position2), state(Position2, on_floor, Position2, BananaStatus)).
+move(state(Position1, on_floor, BoxPosition, BananaStatus), walk(Position1, Position2), state(Position2, on_floor, BoxPosition, BananaStatus)).
+
+% Goal condition
+can_get_banana(state(_, _, _, has_banana)). % Goal state where the monkey has the banana.
+can_get_banana(CurrentState) :-
+    move(CurrentState, Action, NewState),      % Perform a move.
+    write(Action), write(" -> "), write(NewState), nl, % Log the action and new state.
+    can_get_banana(NewState).                 % Recursively check if the goal can be reached.
+
+% Solve the problem
+solve :-
+    InitialState = state(at_door, on_floor, at_window, does_not_have_banana), % Define the initial state.
+    can_get_banana(InitialState).
