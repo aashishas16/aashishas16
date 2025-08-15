@@ -4,6 +4,7 @@
 
 <h3 align="center">Aspiring software developer with a keen interest in web development, passionate about leveraging technology to create impactful solutions. Currently pursuing Master in Computer Application, I am skilled in various programming languages and tools, and always eager to learn and grow in the tech field.</h3>
 
+![github](https://github.com/aashishas16/aashishas16/blob/main/github%20profile.png)
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=aashishas16&label=Profile%20views&color=0e75b6&style=flat" alt="aashishas16" /> </p>
 
 <p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=aashishas16" alt="aashishas16" /></a> </p>
