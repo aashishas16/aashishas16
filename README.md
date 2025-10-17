@@ -18,7 +18,7 @@
 
 <div style="margin-top: 3rem">
   <div style="flex: 1; ">
-    <p>🚀 I am currently pursuing my Master's in Computer Application from NIT Agartala with a CGPA of 8.7</p>
+    <p>🚀 I completed my Master's in Computer Application from NIT Agartala with a CGPA of 8.7</p>
     <p>🎓 I hold a BSc in Computer Science from Ravindra Nath Tagore College Sanawad with a percentage of 66.78%.</p>
     <p>🌐 I have created various projects including a personal portfolio and a photo gallery for NIT Agartala.</p> 
    <p>💬 Ask me about software development, JavaScript, React, Node.js, and databases </p>
