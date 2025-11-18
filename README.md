@@ -8,8 +8,10 @@
   in Computer Applications. Skilled in multiple programming languages and tools, I am always eager 
   to learn, innovate, and grow in the tech field.
   <br><br>
-  Currently working with Docker, Kubernetes, Go, gRPC, Helm, and contributing to real-world production projects.
+  Currently working as a Software Engineer, gaining hands-on experience with Docker, Kubernetes, Go, 
+  gRPC, Helm, and contributing to real-world production projects.
 </h3>
+
 
 
 ![github](https://github.com/aashishas16/aashishas16/blob/main/github%20profile.png)
