@@ -2,7 +2,15 @@
     <img src="https://readme-typing-svg.herokuapp.com/?font=Righteous&size=35&center=true&vCenter=true&width=700&height=70&duration=4000&lines=Hi+There!+👋;+I'm+Aashish+Singune!;+A+Software+Engineer!" />
 </h1>
 
-<h3 align="center">Aspiring software developer with a keen interest in web development, passionate about leveraging technology to create impactful solutions. Currently pursuing Master in Computer Application, I am skilled in various programming languages and tools, and always eager to learn and grow in the tech field.</h3>
+<h3 align="center">
+  Aspiring Software Developer with a strong interest in Web Development and Cloud-Native technologies. 
+  Passionate about leveraging technology to build impactful solutions, I have completed my Master 
+  in Computer Applications. Skilled in multiple programming languages and tools, I am always eager 
+  to learn, innovate, and grow in the tech field.
+  <br><br>
+  Currently working with Docker, Kubernetes, Go, gRPC, Helm, and contributing to real-world production projects.
+</h3>
+
 
 ![github](https://github.com/aashishas16/aashishas16/blob/main/github%20profile.png)
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=aashishas16&label=Profile%20views&color=0e75b6&style=flat" alt="aashishas16" /> </p>
